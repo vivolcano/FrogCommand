@@ -5,8 +5,7 @@ public class Frog {
     public static final int MAX_POSITION = 10;
 
     protected int position;
-    protected int lastMove;
-    protected String[] field = new String[]{" ", " ", " ", " ", " ", "X", " ", " ", " ", " ", " "};
+    protected String[] field;
 
     public Frog() {
         this.position = 5;
@@ -15,10 +14,7 @@ public class Frog {
     public boolean jump(int steps) {
         if ((MIN_POSITION <= this.position + steps) && (this.position + steps) <= MAX_POSITION) {
             this.position += steps;
-            this.lastMove = steps;
             System.out.println("Лягушка прыгнула на " + steps + " клетку(ок), текущая позиция = " + this.position + ".");
-            field = new String[]{" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "};
-            field[position] = "X";
             printField(field);
             return true;
         } else {
@@ -29,9 +25,13 @@ public class Frog {
         return false;
     }
 
-    protected void printField(String[] field) {
+    private void printField(String[] fields) {
+
+        fields = new String[]{" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "};
+        fields[this.position] = "X";
+
         System.out.print("| ");
-        for (String location : field) {
+        for (String location : fields) {
             System.out.print(location + " | ");
         }
         System.out.println("\n");

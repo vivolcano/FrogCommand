@@ -7,7 +7,7 @@ public class DoItCommand implements Command {
     }
 
     @Override
-    public void run(int steps) {
-        frog.jump(steps);
+    public boolean run(int steps) {
+        return frog.jump(steps);
     }
 }

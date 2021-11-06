@@ -7,9 +7,7 @@ public class UndoCommand implements Command {
     }
 
     @Override
-    public void run(int steps) {
-        System.out.println("Отмена хода!");
-
-        frog.jump(-frog.lastMove);
+    public boolean run(int steps) {
+        return frog.jump(-steps);
     }
 }

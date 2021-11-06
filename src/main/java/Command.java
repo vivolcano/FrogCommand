@@ -1,4 +1,4 @@
 public interface Command {
 
-    void run(int steps);
+    boolean run(int steps);
 }
