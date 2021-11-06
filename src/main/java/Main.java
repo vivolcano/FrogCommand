@@ -33,7 +33,12 @@ public class Main {
 
                 case "backback": {
                     if (curCommand == commands.size() - 1) {
-                        System.out.println("нечего потворить");
+                        System.out.println("Нет отмененной операции");
+                    } else {
+                        if (commands.get(curCommand + 1).doit()) curCommand++;
+                        System.out.println("Повтор отмененной операции операции");
+                        System.out.println("curCommand = " + curCommand);
+                        commands.stream().forEach(System.out::println);
                     }
                     break;
                 }
