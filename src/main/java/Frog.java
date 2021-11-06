@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Frog {
     public static final int MIN_POSITION = 0;
     public static final int MAX_POSITION = 10;
